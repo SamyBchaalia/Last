@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.064" height="36.794" viewBox="0 0 40.064 36.794">
+  <g id="Group_4213" data-name="Group 4213" transform="translate(-508.936 -533)">
+    <g id="Group_4118" data-name="Group 4118" transform="translate(509.043 533.348)">
+      <g id="Rectangle_18306" data-name="Rectangle 18306" transform="translate(-0.107 -0.348)" fill="none" stroke="#fbce01" stroke-width="1">
+        <rect width="40.064" height="36.794" rx="6" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39.064" height="35.794" rx="5.5" fill="none"/>
+      </g>
+    </g>
+    <g id="digital-signature" transform="translate(520.049 543.49)">
+      <path id="Path_8724" data-name="Path 8724" d="M2.43,12.1,12.6,1.915A.556.556,0,0,1,13,1.75h0a.555.555,0,0,1,.394.164l3.6,3.6a.557.557,0,0,1,0,.789L6.815,16.481Z" transform="translate(-0.624 -0.473)" fill="#fbce01"/>
+      <path id="Path_8725" data-name="Path 8725" d="M21.409,4.425l.366-.366a2.361,2.361,0,0,0,0-3.35,2.42,2.42,0,0,0-3.355,0l-.366.366Z" transform="translate(-4.637 -0.032)" fill="#fbce01"/>
+      <path id="Path_8726" data-name="Path 8726" d="M1.5,16.678.025,21.4a.558.558,0,0,0,.532.724.567.567,0,0,0,.167-.025l4.717-1.479Z" transform="translate(0 -4.306)" fill="#fbce01"/>
+      <path id="Path_8727" data-name="Path 8727" d="M6.777,7.015a.553.553,0,0,0,.394-.164l3.6-3.6a.888.888,0,0,1,.7-.249l.88-.881a2.01,2.01,0,0,0-2.37.341l-3.6,3.6a.558.558,0,0,0,.395.952Z" transform="translate(-1.597 -0.507)" fill="#fbce01"/>
+    </g>
+  </g>
+</svg>

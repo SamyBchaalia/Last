@@ -1,0 +1,99 @@
+
+
+
+<div id="loader" style="display: none;">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only" id="loading"></span>
+        </div>
+        
+
+    </div>
+</div>
+<form [formGroup]='this.service.form'  (submit)="onSubmit()">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-8 shop-form">
+                <div class="title">Shop</div>
+
+                <div class="d-flex justify-content-center w-100 ">
+
+                    <div class="image-food">
+                        <img [src]="Foodspecs.image" (click)="upload.click()"/>
+                    </div>
+                </div>
+                <div class="button-container " id="editButton">
+                <button type="button" (click)="upload.click()" class="btn btn-outline-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </div>
+                <p hidden>
+                    <input type="hidden" accept="image/*" #upload type="file" class="form-control" (change)="AddImage($event)"/></p>
+
+
+                <div class="title">General Information</div>
+                <input type="hidden" formControlName="$key">
+                <input type="hidden" formControlName="image">
+                <div class="formControleContainer">
+                <div class="d-inline-block formControle">
+                    <img src="../../../assets/restaurant.svg" width="5%"><span style="margin-left:2.5%;margin-right:2.5%;">Product Name</span>
+                    <input formControlName="name" class="formControle-input" placeholder="product name" (keyup)='Foodname($event)'>
+                </div>
+                <div class="d-inline-block formControle" style="margin-left:1.4%;">
+                    <img src="../../../assets/dollar-tag.svg" height="60%"><span style="margin-left:4%;margin-right:10.05%;">Price</span>
+                    <input formControlName="price" class="formControle-input" type="number" placeholder="price" (keyup)='Foodprice($event)'>
+                </div>
+                <div class="d-inline-block formControle">
+                    <img src="../../../assets/box (1).svg" width="5%"><span style="margin-left:2.9%;margin-right:7.2%;">Quantity</span>
+                    <input formControlName="quantity" type="number" class="formControle-input" maxlength="5" placeholder="Quantity">
+                </div>
+                <div class="d-inline-block" style="width: 100%; height:30%;margin-bottom:3%;margin-left:0%;">
+                    <img src="../../../assets/description.svg" width="5%"><span style="margin-left:2.5%;margin-right:5%;">Description</span>
+                    <input formControlName="description" class="formControle-input" style="height: 75%;" size="500" placeholder="description" (keyup)='Fooddescription($event)'>
+                </div>
+            </div>
+
+
+            </div>
+
+            <div class="col-4" >
+          
+                <a style='width:5%;float:right;' (click)="onClose()"><img src="../../../assets/cancel.svg"> </a>
+
+                <div class="app-preview-title">
+
+                    APP Preview
+                </div>
+                
+                <div class="card mb-4" style="width:auto;  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;;border-radius: 12;border-top:0;margin-top:7%;padding:0.1rem">
+                    <div class="row no-gutters" style="padding: 0.1%;">
+                        <div class="col-md-4   card-image-food">
+                           
+                                <img [src]="Foodspecs.image" (click)="upload.click()"/>
+                            
+                        </div>
+                        <div class="col-md-8" style="padding: 0%;height:100%">
+                            <div class="card-body " style="height:35%;padding:2%;">
+                                <h5 class="card-title" style="font-weight:600;font: size 17;">{{Foodspecs.name}}
+                                    <span style="font-size:19px;font-weight:bold;color:#468257;float:right;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" >{{Foodspecs.price}}DT</span>
+                                </h5>
+                                <p class="card-text " style="margin-left:0%;color: #A7ABA9;font-size:13;font-weight:400;line-height: 1.6">{{this.fooddescription}}</p>
+                                <p class="card-text">
+                                    <small style="color:#FBCE01;font-weight:400;bottom:1%">Learn More</small>
+                                    <img src="../../assets/lock-button.svg" style="position: relative;bottom:10%;right:0;float:right;"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="button-container" style="position: relative;top:60%;">
+                <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                <button mat-raised-button color="warn" type="button" style="margin-left: 10%;" (click)="onClear()">Clear</button>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+      
+</form>

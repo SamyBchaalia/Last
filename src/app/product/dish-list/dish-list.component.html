@@ -1,0 +1,42 @@
+<div class="container" style="height: 100%;background-color:#FFF">
+    <div class="d-flex row h-100 " style="width:100%; height:100%">
+      <div class="col-12">
+          <h4 class=" title">Today Dishes <a (click)="onCreate()"><img src="../../assets/Add Plates.svg"  ></a></h4>
+          
+          <!-- Row -->
+          <div class="row " >
+              <!-- column -->
+              <div class="col-lg-4  col-md-6 "  *ngFor="let dish of TodayDishes">
+                  <!-- Card -->
+                  <div class="card dish-card " >
+                    <div class="d-flex justify-content-center w-100 " style="bottom:10%">
+    
+                    <div class="image-dish">
+                      <img class="card-img-top img-responsive" src={{dish.image}} alt="Card image cap">
+                    </div>
+                    </div>
+                      <div class="card-body">
+
+                          <h4 class="card-title dish-title">{{dish.name}} <span>{{dish.price}}DT</span></h4>
+                          <p class="card-text dish-description">Living room integrated into the suite, king size bed, premium bedding, bathroom (shower and bath), marble floor</p>
+                          <div class="card-footer footer-card-dish">
+                            <a (click)="onEdit(dish)">  <img src="../../assets/Edit-icon.svg"></a>
+                            <img src="../../assets/Delete-icon.svg" (click)="onDelete(dish)" >
+                            
+          
+    
+                        </div>
+                      </div>
+                  </div>
+                  <!-- Card -->
+              </div>
+            
+           
+             
+             
+              <!-- column -->
+          </div>
+          <!-- Row -->
+      </div>
+    </div>
+    </div>

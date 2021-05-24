@@ -1,0 +1,96 @@
+
+
+
+<div id="loader" style="display: none;">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only" id="loading"></span>
+        </div>
+        
+
+    </div>
+</div>
+<form [formGroup]='this.service.form'  (submit)="onSubmit()">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-8 shop-form">
+                <div class="title">Today Dish</div>
+
+                <div class="d-flex justify-content-center w-100 ">
+
+                    <div class="image-food">
+                        <img [src]="Foodspecs.image" (click)="upload.click()"/>
+                    </div>
+                </div>
+                <div class="button-container " id="editButton">
+                <button type="button" (click)="upload.click()" class="btn btn-outline-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </div>
+                <p hidden>
+                    <input type="hidden" accept="image/*" #upload type="file" class="form-control" (change)="AddImage($event)"/></p>
+
+
+                <div class="title">General Information</div>
+                <input type="hidden" formControlName="$key">
+                <input type="hidden" formControlName="image">
+                <div class="formControleContainer">
+                <div class="d-inline-block formControle">
+                    <img src="../../../assets/restaurant.svg" width="5%"><span style="margin-left:2.5%;margin-right:2.5%;">Dish Name</span>
+                    <input formControlName="name" class="formControle-input" placeholder="product name" (keyup)='Foodname($event)'>
+                </div>
+                <div class="d-inline-block formControle" style="margin-left:1.4%;">
+                    <img src="../../../assets/dollar-tag.svg" height="60%"><span style="margin-left:4%;margin-right:10.05%;">Price</span>
+                    <input formControlName="price" class="formControle-input" type="number" placeholder="price" (keyup)='Foodprice($event)'>
+                </div>
+                <div class="d-inline-block formControle">
+                    <img src="../../../assets/box (1).svg" width="5%"><span style="margin-left:2.9%;margin-right:7.2%;">Quantity</span>
+                    <input formControlName="quantity" type="number" class="formControle-input" maxlength="5" placeholder="Quantity">
+                </div>
+                <div class="d-inline-block" style="width: 100%; height:30%;margin-bottom:3%;margin-left:0%;">
+                    <img src="../../../assets/description.svg" width="5%"><span style="margin-left:2.5%;margin-right:5%;">Description</span>
+                    <input formControlName="description" class="formControle-input" style="height: 75%;" size="500" placeholder="description" (keyup)='Fooddescription($event)'>
+                </div>
+            </div>
+
+
+            </div>
+
+            <div class="col-4" >
+          
+                <a style='width:5%;float:right;' (click)="onClose()"><img src="../../../assets/cancel.svg"> </a>
+
+                <div class="app-preview-title">
+
+                    APP Preview
+                </div>
+                
+                <div class="card dish-card " >
+                    <div class="d-flex justify-content-center" style="bottom:10%">
+    
+                    <div class="image-dish">
+                      <img class="card-img-top img-responsive" src={{Foodspecs.image}} alt="Card image cap">
+                    </div>
+                    </div>
+                      <div class="card-body">
+                          <h4 class="card-title dish-title">{{Foodspecs.name}} <span>{{Foodspecs.price}}DT</span></h4>
+                          <p class="card-text dish-description">{{Foodspecs.description}}</p>
+                            <p class="card-text">
+                                <small style="color:#FBCE01;font-weight:400;bottom:1%">Learn More</small>
+                                <img src="../../assets/lock-button.svg" style="position: relative;bottom:10%;right:0;float:right;"></p>
+          
+    
+                        
+                      </div>
+                  </div>
+            <div class="button-container" style="position: relative;">
+                <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                <button mat-raised-button color="warn" type="button" style="margin-left: 10%;" (click)="onClear()">Clear</button>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+      
+</form>
